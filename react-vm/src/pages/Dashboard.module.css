@@ -1,0 +1,71 @@
+.container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f0f2f5;
+}
+
+.card {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  width: 100%;
+  max-width: 480px;
+}
+
+.card h2 {
+  margin: 0 0 1.5rem;
+  color: #333;
+}
+
+.card p {
+  margin-bottom: 1.5rem;
+  color: #555;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1.5rem;
+}
+
+.table th,
+.table td {
+  text-align: left;
+  padding: 0.6rem 0.75rem;
+  border-bottom: 1px solid #e5e7eb;
+  font-size: 0.95rem;
+}
+
+.table th {
+  color: #6b7280;
+  font-weight: 600;
+  width: 40%;
+}
+
+.table td {
+  color: #111827;
+}
+
+.logout {
+  width: 100%;
+  padding: 0.7rem;
+  background: #dc2626;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.logout:hover {
+  background: #b91c1c;
+}
+
+.error {
+  color: #dc2626;
+  font-size: 0.875rem;
+}

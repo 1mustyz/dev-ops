@@ -1,0 +1,24 @@
+# Vagrant
+.vagrant/
+*.swp
+*.swo
+
+# Node dependencies
+node-server-vm/node_modules/
+react-vm/node_modules/
+
+# Environment variables
+node-server-vm/.env
+react-vm/.env
+
+# React production build
+react-vm/build/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS
+.DS_Store
