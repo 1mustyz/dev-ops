@@ -82,7 +82,7 @@ jobs:
             --instance-ids "$INSTANCE_ID" \
             --document-name "AWS-RunShellScript" \
             --comment "Deploy $IMAGE_TAG" \
-            --parameters "commands=[\"/deploy.sh $IMAGE_TAG\"]" \
+            --parameters "commands=[\"/opt/nodeapp/deploy.sh $IMAGE_TAG\"]" \
             --query "Command.CommandId" \
             --output text)
 
