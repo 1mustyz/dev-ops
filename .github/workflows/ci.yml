@@ -70,7 +70,7 @@ jobs:
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v6
         with:
-          role-to-assume: arn:aws:iam::123456789012:role/GitHubActionsECRRole
+          role-to-assume: arn:aws:iam::968585507521:role/GitHubActionsECRRole
           aws-region: ${{ env.AWS_REGION }}
 
       - name: Deploy to EC2 using SSM
