@@ -29,7 +29,7 @@ services:
       retries: 5
 
   backend:
-    image: 968585507521.dkr.ecr.us-east-1.amazonaws.com/nodeapp-backend:v1
+    image: 968585507521.dkr.ecr.us-east-1.amazonaws.com/nodeapp-backend:${IMAGE_TAG}
     container_name: backend
     restart: unless-stopped
     env_file:
@@ -43,7 +43,7 @@ services:
       - nodeapp-network
 
   frontend:
-    image: 968585507521.dkr.ecr.us-east-1.amazonaws.com/nodeapp-frontend:v1
+    image: 968585507521.dkr.ecr.us-east-1.amazonaws.com/nodeapp-frontend:${IMAGE_TAG}
     container_name: frontend
     restart: unless-stopped
     ports:
