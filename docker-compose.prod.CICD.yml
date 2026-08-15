@@ -1,0 +1,61 @@
+services:
+  mysql:
+    image: mysql:8.4
+    container_name: mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: nodeapp
+      MYSQL_USER: nodeuser
+      MYSQL_PASSWORD: mypassword
+      MYSQL_ROOT_PASSWORD: rootpassword
+    volumes:
+      - mysql-data:/var/lib/mysql
+    networks:
+      - nodeapp-network
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "mysqladmin",
+          "ping",
+          "-h",
+          "localhost",
+          "-u",
+          "root",
+          "-prootpassword",
+        ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  backend:
+    image: 968585507521.dkr.ecr.us-east-1.amazonaws.com/nodeapp-backend:v1
+    container_name: backend
+    restart: unless-stopped
+    env_file:
+      - ./node-server-vm/.env
+    ports:
+      - "8080:8080"
+    depends_on:
+      mysql:
+        condition: service_healthy
+    networks:
+      - nodeapp-network
+
+  frontend:
+    image: 968585507521.dkr.ecr.us-east-1.amazonaws.com/nodeapp-frontend:v1
+    container_name: frontend
+    restart: unless-stopped
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    networks:
+      - nodeapp-network
+
+networks:
+  nodeapp-network:
+    driver: bridge
+
+volumes:
+  mysql-data:
