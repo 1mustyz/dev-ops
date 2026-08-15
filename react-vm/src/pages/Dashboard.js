@@ -53,7 +53,7 @@ function Dashboard() {
   return (
     <div className={styles.container}>
       <div className={styles.card}>
-        <h1>Complete CI/CD Version</h1>
+        <h1>Complete CI/CD Version 2</h1>
         <h2>Dashboard</h2>
         <p>
           Welcome back, <strong>{user.username}</strong>!
